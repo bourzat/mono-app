@@ -37,3 +37,44 @@ source mono/bin/activate
 
 # Install dependencies
 pip install requests python-dotenv
+
+### 2. Configure Environment Variables
+
+Create a `.env` file in the root directory:
+
+```env
+STRAVA_CLIENT_ID="your_client_id"
+STRAVA_CLIENT_SECRET="your_client_secret"
+STRAVA_REFRESH_TOKEN="your_refresh_token"
+
+> **Note:** Do not commit the `.env` file to Git. Ensure `.env` is listed in `.gitignore`.
+
+---
+
+## 🏃 Usage
+
+Run the automated ingestion pipeline to refresh tokens and fetch multi-sport activity data:
+
+```bash
+python strava_client.py
+
+### Example Pipeline Output
+
+```text
+🔄 Requesting fresh access token from Strava...
+✅ Success! Obtained fresh access token.
+
+Successfully fetched 30 activities!
+Latest Activity: [BASE] 23.2k | Loresho Loop | MTB 26er
+Distance: 23240.6 m
+
+## 🔒 Security & Best Practices
+
+* **Zero-Commit Secrets**: All Client ID, Secret, and OAuth Refresh tokens are managed via isolated environment variables (`.env`).
+* **Session Persistence**: Access tokens are dynamically requested per pipeline execution using programmatic refresh routines.
+
+---
+
+## 👨‍💻 Author
+
+Built by **Ilyas Bourzat**

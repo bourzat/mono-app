@@ -58,7 +58,7 @@ Run the automated ingestion pipeline to refresh tokens and fetch multi-sport act
 
 ```bash
 python strava_client.py
-
+```
 ### Example Pipeline Output
 
 ```text

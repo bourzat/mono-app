@@ -1,0 +1,9 @@
+# Environment variables / Secrets
+.env
+
+# Virtual Environment
+mono/
+
+# Python Cache
+__pycache__/
+*.pyct
